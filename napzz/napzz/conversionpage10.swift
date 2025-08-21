@@ -15,9 +15,13 @@ struct ConversionPage10: View {
     
     var body: some View {
         ZStack {
-            // Dark background with gradient
+            // Premium gradient background matching other conversion pages
             LinearGradient(
-                gradient: Gradient(colors: [Color.black, Color.blue.opacity(0.3)]),
+                gradient: Gradient(colors: [
+                    Color(red: 0.05, green: 0.1, blue: 0.25),
+                    Color(red: 0.1, green: 0.05, blue: 0.2),
+                    Color.black
+                ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
@@ -40,54 +44,60 @@ struct ConversionPage10: View {
                     }
                     .padding(.top, 10)
                     
-                    // Robot icon
+                    // Premium sleep-themed icon matching other conversion pages
                     ZStack {
                         Circle()
-                            .fill(Color.white)
-                            .frame(width: 80, height: 80)
+                            .fill(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [
+                                        Color.white.opacity(0.15),
+                                        Color.white.opacity(0.05)
+                                    ]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .frame(width: 100, height: 100)
                         
-                        VStack(spacing: 4) {
-                            // Robot eyes
-                            HStack(spacing: 10) {
-                                Circle()
-                                    .fill(Color.blue)
-                                    .frame(width: 8, height: 8)
-                                Circle()
-                                    .fill(Color.blue)
-                                    .frame(width: 8, height: 8)
-                            }
-                            
-                            // Robot mouth
-                            RoundedRectangle(cornerRadius: 4)
-                                .fill(Color.gray)
-                                .frame(width: 20, height: 4)
-                        }
+                        Image(systemName: "moon.stars.fill")
+                            .font(.system(size: 40, weight: .light))
+                            .foregroundColor(.white)
+                            .symbolRenderingMode(.hierarchical)
                     }
                     .padding(.top, 20)
                     
-                    // Title
-                    Text("You are in the right place to sleep better with good habits")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                    // Enhanced title matching other conversion pages
+                    Text("Good habits lead to better sleep")
+                        .font(.system(size: 28, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
-                        .padding(.top, 30)
+                        .lineSpacing(4)
+                        .padding(.top, 32)
                     
                     Spacer()
                     
                     // Cards section
                     HStack(spacing: 20) {
-                        // "No" card (bad habits)
+                        // "Habits to Avoid" card (bad habits)
                         VStack(spacing: 0) {
                             // Card header
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.gray.opacity(0.8))
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                Color(red: 0.3, green: 0.2, blue: 0.3),
+                                                Color(red: 0.2, green: 0.15, blue: 0.25)
+                                            ]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
                                     .frame(height: 80)
                                 
-                                Text("No")
-                                    .font(.largeTitle)
+                                Text("Habits to Avoid")
+                                    .font(.headline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                             }
@@ -104,23 +114,55 @@ struct ConversionPage10: View {
                             .padding(.vertical, 20)
                             .background(
                                 RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.gray.opacity(0.6))
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                Color.white.opacity(0.08),
+                                                Color.white.opacity(0.04)
+                                            ]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(
+                                                LinearGradient(
+                                                    gradient: Gradient(colors: [
+                                                        Color.white.opacity(0.15),
+                                                        Color.white.opacity(0.05)
+                                                    ]),
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                ),
+                                                lineWidth: 1
+                                            )
+                                    )
                             )
                             
-                            // Woman image placeholder
+                            // Tired person placeholder
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.gray.opacity(0.4))
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                Color(red: 0.25, green: 0.2, blue: 0.3),
+                                                Color(red: 0.15, green: 0.1, blue: 0.2)
+                                            ]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
                                     .frame(height: 120)
                                 
-                                // Placeholder for tired woman image
+                                // Placeholder for tired person image
                                 VStack {
-                                    Image(systemName: "person.fill")
+                                    Image(systemName: "figure.fall")
                                         .font(.largeTitle)
-                                        .foregroundColor(.white.opacity(0.7))
-                                    Text("Tired")
+                                        .foregroundColor(.red.opacity(0.7))
+                                    Text("Restless")
                                         .font(.caption)
-                                        .foregroundColor(.white.opacity(0.7))
+                                        .foregroundColor(.red.opacity(0.7))
                                 }
                             }
                         }
@@ -140,16 +182,25 @@ struct ConversionPage10: View {
                         }
                         .frame(width: 40)
                         
-                        // "Yes" card (good habits)
+                        // "Habits to Embrace" card (good habits)
                         VStack(spacing: 0) {
                             // Card header
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.blue)
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                Color(red: 0.2, green: 0.4, blue: 0.7),
+                                                Color(red: 0.1, green: 0.3, blue: 0.6)
+                                            ]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
                                     .frame(height: 80)
                                 
-                                Text("Yes")
-                                    .font(.largeTitle)
+                                Text("Habits to Embrace")
+                                    .font(.headline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                             }
@@ -166,23 +217,55 @@ struct ConversionPage10: View {
                             .padding(.vertical, 20)
                             .background(
                                 RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.blue.opacity(0.8))
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                Color.white.opacity(0.08),
+                                                Color.white.opacity(0.04)
+                                            ]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(
+                                                LinearGradient(
+                                                    gradient: Gradient(colors: [
+                                                        Color.white.opacity(0.15),
+                                                        Color.white.opacity(0.05)
+                                                    ]),
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                ),
+                                                lineWidth: 1
+                                            )
+                                    )
                             )
                             
-                            // Sleeping woman image placeholder
+                            // Peaceful sleep placeholder
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.blue.opacity(0.6))
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                Color(red: 0.15, green: 0.35, blue: 0.6),
+                                                Color(red: 0.1, green: 0.25, blue: 0.5)
+                                            ]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
                                     .frame(height: 120)
                                 
-                                // Placeholder for sleeping woman image
+                                // Placeholder for peaceful sleep image
                                 VStack {
-                                    Image(systemName: "bed.double.fill")
+                                    Image(systemName: "cloud.moon.fill")
                                         .font(.largeTitle)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.cyan)
                                     Text("Peaceful Sleep")
                                         .font(.caption)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.cyan)
                                 }
                             }
                         }
@@ -200,9 +283,11 @@ struct ConversionPage10: View {
                             Circle()
                                 .fill(Color.blue)
                                 .frame(width: 60, height: 60)
+                                .shadow(color: Color.blue.opacity(0.3), radius: 8, x: 0, y: 4)
                             
                             Image(systemName: "arrow.right")
                                 .font(.title2)
+                                .fontWeight(.semibold)
                                 .foregroundColor(.white)
                         }
                     }
@@ -243,7 +328,7 @@ struct BadHabitRow: View {
         HStack {
             Image(systemName: "xmark")
                 .font(.caption)
-                .foregroundColor(.white)
+                .foregroundColor(.red.opacity(0.8))
             
             Text(text)
                 .font(.body)
@@ -261,7 +346,7 @@ struct GoodHabitRow: View {
         HStack {
             Image(systemName: "checkmark")
                 .font(.caption)
-                .foregroundColor(.white)
+                .foregroundColor(.cyan)
             
             Text(text)
                 .font(.body)
