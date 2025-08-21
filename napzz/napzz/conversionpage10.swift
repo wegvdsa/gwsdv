@@ -79,7 +79,7 @@ struct ConversionPage10: View {
                     
                     // Cards section
                     HStack(spacing: 20) {
-                        // "Habits to Avoid" card (bad habits)
+                        // "Bad Habits" card
                         VStack(spacing: 0) {
                             // Card header
                             ZStack {
@@ -96,7 +96,7 @@ struct ConversionPage10: View {
                                     )
                                     .frame(height: 80)
                                 
-                                Text("Habits to Avoid")
+                                Text("Bad Habits")
                                     .font(.headline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
@@ -111,7 +111,7 @@ struct ConversionPage10: View {
                                 BadHabitRow(text: "Heavy food")
                             }
                             .padding(.horizontal, 16)
-                            .padding(.vertical, 20)
+                            .padding(.vertical, 24)
                             .background(
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(
@@ -139,6 +139,7 @@ struct ConversionPage10: View {
                                             )
                                     )
                             )
+                            .frame(minHeight: 180)
                             
                             // Tired person placeholder
                             ZStack {
@@ -153,7 +154,7 @@ struct ConversionPage10: View {
                                             endPoint: .bottomTrailing
                                         )
                                     )
-                                    .frame(height: 120)
+                                    .frame(height: 140)
                                 
                                 // Placeholder for tired person image
                                 VStack {
@@ -182,7 +183,7 @@ struct ConversionPage10: View {
                         }
                         .frame(width: 40)
                         
-                        // "Habits to Embrace" card (good habits)
+                        // "Good Habits" card
                         VStack(spacing: 0) {
                             // Card header
                             ZStack {
@@ -190,8 +191,8 @@ struct ConversionPage10: View {
                                     .fill(
                                         LinearGradient(
                                             gradient: Gradient(colors: [
-                                                Color(red: 0.2, green: 0.4, blue: 0.7),
-                                                Color(red: 0.1, green: 0.3, blue: 0.6)
+                                                Color(red: 0.1, green: 0.3, blue: 0.8),
+                                                Color(red: 0.05, green: 0.2, blue: 0.7)
                                             ]),
                                             startPoint: .topLeading,
                                             endPoint: .bottomTrailing
@@ -199,7 +200,7 @@ struct ConversionPage10: View {
                                     )
                                     .frame(height: 80)
                                 
-                                Text("Habits to Embrace")
+                                Text("Good Habits")
                                     .font(.headline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
@@ -214,7 +215,7 @@ struct ConversionPage10: View {
                                 GoodHabitRow(text: "Comfort bed")
                             }
                             .padding(.horizontal, 16)
-                            .padding(.vertical, 20)
+                            .padding(.vertical, 24)
                             .background(
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(
@@ -242,6 +243,7 @@ struct ConversionPage10: View {
                                             )
                                     )
                             )
+                            .frame(minHeight: 180)
                             
                             // Peaceful sleep placeholder
                             ZStack {
@@ -249,14 +251,14 @@ struct ConversionPage10: View {
                                     .fill(
                                         LinearGradient(
                                             gradient: Gradient(colors: [
-                                                Color(red: 0.15, green: 0.35, blue: 0.6),
-                                                Color(red: 0.1, green: 0.25, blue: 0.5)
+                                                Color(red: 0.1, green: 0.3, blue: 0.7),
+                                                Color(red: 0.05, green: 0.2, blue: 0.6)
                                             ]),
                                             startPoint: .topLeading,
                                             endPoint: .bottomTrailing
                                         )
                                     )
-                                    .frame(height: 120)
+                                    .frame(height: 140)
                                 
                                 // Placeholder for peaceful sleep image
                                 VStack {
